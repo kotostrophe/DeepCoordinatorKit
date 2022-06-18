@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "coordinatorkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kotostrophe/CoordinatorKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2d2ae0287f9c74109cf2bf1b8290a33f19be38c5"
+      }
+    }
+  ],
+  "version" : 2
+}
