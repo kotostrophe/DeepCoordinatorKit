@@ -11,19 +11,22 @@ import CoordinatorKit
 // MARK: - DeepLinkResponder
 
 public extension Coordinatable where Self: DeepLinkResponder {
-    func becomeFirstResponder(child: Coordinatable? = nil) {
+    func becomeFirstResponder(child: DeepLinkResponder? = nil) {
+        defer {
+            let parent = parent as? DeepLinkResponder
+            parent?.becomeFirstResponder(child: self)
+        }
+        
+        guard let child = child as? Coordinatable else { return }
         switch rootViewController {
         case let tabBarController as UITabBarController:
             guard
-                let childViewController = child?.rootViewController,
+                let childViewController = child.rootViewController,
                 let index = tabBarController.viewControllers?.firstIndex(of: childViewController)
             else { break }
             tabBarController.selectedIndex = index
         default: break
         }
-
-        guard let parent = parent as? DeepLinkResponder else { return }
-        parent.becomeFirstResponder(child: self)
     }
 
     func respond(on path: String) {

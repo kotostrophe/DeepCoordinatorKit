@@ -11,7 +11,7 @@ import CoordinatorKit
 public protocol DeepLinkResponder: AnyObject {
     var deepLinkLocator: DeepLinkLocatorProtocol { get }
 
-    func becomeFirstResponder(child: Coordinatable?)
+    func becomeFirstResponder(child: DeepLinkResponder?)
     func canRespond(on path: String) -> Bool
     func respond(on path: String)
     func hitTest(with path: String) -> DeepLinkResponder?
