@@ -128,3 +128,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 ```
+
+## Example app
+
+In the repository [deeplink-responder](https://github.com/kotostrophe/deeplink-responder) presented example of coordiantor pattern via using `CoordinatorKit`. As an addition there was developed deeplink handling mechanism via `DeepCoordinatorKit`.
