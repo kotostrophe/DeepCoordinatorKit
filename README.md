@@ -28,7 +28,7 @@ or add it to the `dependencies` value of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/kotostrophe/DeepCoordinatorKit", .upToNextMinor(from: "1.0.0")),
+    .package(url: "https://github.com/kotostrophe/CoordinatorKit", .upToNextMajor(from: "1.0.1)),
 ]
 ```
 
