@@ -23,7 +23,10 @@ platform :ios do
   lane :tests do |options|
     device_name = options[:device] || 'iPhone 12'
 
-    swift package generate-xcodeproj
+    spm(
+      command: 'generate-xcodeproj',
+      enable_code_coverage: true
+    )
 
     run_tests(
       project: project_name + '.xcodeproj',
