@@ -1,10 +1,6 @@
 # DeepCoordinatorKit
 
-<p align="left">
-    <a href="https://github.com/kotostrophe/DeepCoordinatorKit/actions?query=workflow%3ACI">
-        <img src="https://github.com/kotostrophe/DeepCoordinatorKit/workflows/CI/badge.svg" alt="CI Status">
-    </a>
-</p>
+[![CI](https://github.com/kotostrophe/DeepCoordinatorKit/actions/workflows/DeepCoordinatorKitTests.yml/badge.svg?branch=main&event=push)](https://github.com/kotostrophe/DeepCoordinatorKit/actions/workflows/DeepCoordinatorKitTests.yml)
 
 
 Lightweight library dependent of [CoordinatorKit](https://github.com/kotostrophe/CoordinatorKit) that pass deeplinks trought coordiantor tree and respond on them. 
