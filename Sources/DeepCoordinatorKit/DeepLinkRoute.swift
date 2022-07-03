@@ -12,7 +12,7 @@ public final class DeepLinkRoute {
     static let separator = "/"
     static let variable = ":"
 
-    typealias RouteAction = (JSON) -> Void
+    public typealias RouteAction = (JSON) -> Void
 
     // MARK: - Properties
 
@@ -21,7 +21,7 @@ public final class DeepLinkRoute {
 
     // MARK: - Initializers
 
-    init(path: String, action: @escaping RouteAction) {
+    public init(path: String, action: @escaping RouteAction) {
         self.path = DeepLinkRoute.separator + path
         self.action = action
     }

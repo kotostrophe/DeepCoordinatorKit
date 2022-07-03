@@ -1,0 +1,48 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+require 'fileutils'
+
+default_platform(:ios)
+project_name = 'DeepCoordinatorKit'
+
+platform :ios do 
+  desc "Run tests"
+  lane :tests do |options|
+    device_name = options[:device] || 'iPhone 12'
+
+    spm(
+      command: 'generate-xcodeproj',
+      enable_code_coverage: true
+    )
+
+    run_tests(
+      project: project_name + '.xcodeproj',
+      scheme: project_name + '-Package',
+      device: device_name,
+      output_directory: './fastlane/UnitTests',
+      clean: true
+    )
+  end
+
+  before_all do
+    FileUtils.remove_dir './CodeCoverage', true
+    FileUtils.remove_dir './UnitTests', true
+  end
+
+  after_all do
+    FileUtils.remove_dir './../' + project_name + '.xcodeproj', true
+  end
+end
