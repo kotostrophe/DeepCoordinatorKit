@@ -9,7 +9,7 @@ let package = Package(
         .library(name: "DeepCoordinatorKit", targets: ["DeepCoordinatorKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/kotostrophe/CoordinatorKit", branch: "main"),
+        .package(url: "https://github.com/kotostrophe/CoordinatorKit", .upToNextMinor(from: "1.0.0")),
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON", .upToNextMajor(from: "5.0.0"))
     ],
     targets: [

@@ -5,9 +5,9 @@
         "package": "CoordinatorKit",
         "repositoryURL": "https://github.com/kotostrophe/CoordinatorKit",
         "state": {
-          "branch": "main",
-          "revision": "d0c547cd71f5a2ea90685c86569cf84ff9ce6c61",
-          "version": null
+          "branch": null,
+          "revision": "e7e834968b1f3f7dac83d66596c7ebbea31ef3b8",
+          "version": "1.0.0"
         }
       },
       {
