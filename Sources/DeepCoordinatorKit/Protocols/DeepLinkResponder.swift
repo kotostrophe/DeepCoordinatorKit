@@ -16,8 +16,3 @@ public protocol DeepLinkResponder: AnyObject {
     func respond(on path: String)
     func hitTest(with path: String) -> DeepLinkResponder?
 }
-
-public extension DeepLinkResponder {
-    func respond(on deepLink: String) {}
-}
-
