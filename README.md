@@ -28,7 +28,7 @@ or add it to the `dependencies` value of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/kotostrophe/CoordinatorKit", from: "1.0.0"),
+    .package(url: "https://github.com/kotostrophe/DeepCoordinatorKit", branch: "main"),
 ]
 ```
 
@@ -48,7 +48,7 @@ If you prefer not to use any of dependency managers, you can integrate manually.
 public protocol DeepLinkResponder: AnyObject {
     var deepLinkLocator: DeepLinkLocatorProtocol { get }    // store all the deeplink handler for this object
 
-    func becomeFirstResponder(child: DeepLinkResponder?)        // run in case of first responder
+    func becomeFirstResponder(child: DeepLinkResponder?)    // run in case of first responder
     func canRespond(on path: String) -> Bool                // helps to check is deeplink path can be handled by this object
     func respond(on path: String)                           // activates handler that respond on deeplink path
     func hitTest(with path: String) -> DeepLinkResponder?   // mechanism of searching deeplink path responder
