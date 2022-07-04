@@ -3,7 +3,7 @@
 [![CI](https://github.com/kotostrophe/DeepCoordinatorKit/actions/workflows/DeepCoordinatorKitTests.yml/badge.svg?branch=main&event=push)](https://github.com/kotostrophe/DeepCoordinatorKit/actions/workflows/DeepCoordinatorKitTests.yml)
 
 
-Lightweight library dependent of [CoordinatorKit](https://github.com/kotostrophe/CoordinatorKit) that pass deeplinks trought coordiantor tree and respond on them. 
+Lightweight library that pass deeplinks trought coordiantor tree and respond on them. Depends on [CoordinatorKit](https://github.com/kotostrophe/CoordinatorKit).
 
 ## Navigation
 
@@ -28,7 +28,7 @@ or add it to the `dependencies` value of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/kotostrophe/DeepCoordinatorKit", branch: "main")
+    .package(url: "https://github.com/kotostrophe/CoordinatorKit", from: "1.0.0"),
 ]
 ```
 
