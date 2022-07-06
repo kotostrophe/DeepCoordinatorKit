@@ -14,7 +14,7 @@ Lightweight library that pass deeplinks trought coordiantor tree and respond on 
 
 ## Installation
 
-Ready to use on iOS 9+
+Ready to use on iOS 9+. iOS only.
 
 ### Swift Package Manager
 
@@ -28,7 +28,7 @@ or add it to the `dependencies` value of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/kotostrophe/DeepCoordinatorKit", branch: "main"),
+    .package(url: "https://github.com/kotostrophe/DeepCoordinatorKit", .upToNextMajor(from: "1.0.0")),
 ]
 ```
 
@@ -49,9 +49,9 @@ public protocol DeepLinkResponder: AnyObject {
     var deepLinkLocator: DeepLinkLocatorProtocol { get }    // store all the deeplink handler for this object
 
     func becomeFirstResponder(child: DeepLinkResponder?)    // run in case of first responder
-    func canRespond(on path: String) -> Bool                // helps to check is deeplink path can be handled by this object
+    func canRespond(on path: String) -> Bool                // supplementary method for seeking target handler 
     func respond(on path: String)                           // activates handler that respond on deeplink path
-    func hitTest(with path: String) -> DeepLinkResponder?   // mechanism of searching deeplink path responder
+    func hitTest(with path: String) -> DeepLinkResponder?   // mechanism of finding target deeplink handler
 }
 ```
 
