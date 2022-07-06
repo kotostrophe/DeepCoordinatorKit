@@ -98,7 +98,7 @@ final class DeepLinkResponderTests: XCTestCase {
     
     func testHitTestRecoursivelyShort() {
         let path = "/some/path"
-        let expectation = XCTestExpectation(description: "Extected to run handler by path `\(path)`")
+        let expectation = XCTestExpectation(description: "Expecting to run handler by path `\(path)`")
         
         let handler = DeepLinkRoute(path: path) { _ in
             expectation.fulfill()
@@ -110,27 +110,8 @@ final class DeepLinkResponderTests: XCTestCase {
         childCoordinator.setup(deeplinkHandlers: handler)
         
         parentCoordinator.start(deeplink: path)
-    }
-    
-    func testHitTestRecoursivelyShortInverted() {
-        let path = "/some/path"
-        let targetPath = "/another/path"
-        let expectation = XCTestExpectation(description: "Nothing is expecting. Handler mustn't run")
         
-        let handler = DeepLinkRoute(path: path) { _ in
-            XCTAssertFalse(true, "Handler mustn't run cause of different paths (\(path), \(targetPath)")
-        }
-        
-        let parentCoordinator = SomeCoordinator()
-        let childCoordinator = SomeCoordinator()
-        parentCoordinator.childLocator.push(childCoordinator)
-        childCoordinator.setup(deeplinkHandlers: handler)
-        
-        parentCoordinator.start(deeplink: targetPath)
-        
-        DispatchQueue.main.async {
-            expectation.fulfill()
-        }
+        wait(for: [expectation], timeout: 2)
     }
     
     func testBecomeFirstResponderWithTabBar() {
